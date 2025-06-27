@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Blogs</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/nolan/64/news.png">
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
 <body>
     <div class="container">
@@ -25,9 +26,9 @@
       </header>
 
       <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content">
+        <nav class="nav d-flex justify-content-between">
           {% for cat in categories %}
-          <a class="p-2 text-muted" href="#">{{ cat.category_name }}</a>
+          <a id="navbar" class="p-2 text-muted" href="#">{{ cat.category_name }}</a>
           {% endfor %}
         </nav>
       </div>
@@ -35,48 +36,51 @@
     
     
 <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url({% static 'images/cricket.jpg' %});background-blend-mode: overlay;background-size:cover;">
-    <div class="col-md-8 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+  {% for post in featured_posts %}
+  {% if forloop.first %}
+  <div class="col-md-8 px-0">
+      <h1 class="display-4 font-italic">{{ post.title }}</h1>
+      <p class="lead my-3">{{ post.short_description }}</p>
       <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
     </div>
   </div>
+  {% endif %}
+  {% endfor %}
 
+  <h1 class="container-container">Featured Posts</h1>
   <div class="row mb-2">
+  {% for post in featured_posts %}
+    {% if not forloop.first %}
     <div class="col-md-6">
       <div class="card border-0" >
         <div class="card-body">
-          <h3>Post Title</h3>
-          <small class="mb-1 text-muted">Nov 11 | Author</small>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h3>{{ post.title }}</h3>
+          <small class="mb-1 text-muted">{{post.created_at}} ago | {{post.author}}</small>
+          <p class="card-text">{{ post.short_description }}</p>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="card border-0" >
-        <div class="card-body">
-          <h3>Post Title</h3>
-          <small class="mb-1 text-muted">Nov 11 | Author</small>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
+    {% endif %}
+  {% endfor %}
   </div>
 
+  <h3 id="posts-card">Recent Articles</h3>
   <main role="main" class="container p-0">
     <div class="row">
       <div class="col-md-8 blog-main">
 
+        {% for post in posts %}
         <div class="blog-post">
-          <h2 class="blog-post-title">Sample blog post</h2>
-          <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+          <h2 class="blog-post-title">{{ post.title }}</h2>
+          <p class="blog-post-meta">{{post.created_at | timesince}} by <a href="#">{{post.author}}</a></p>
 
-          <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+          <p>{{ post.short_description | truncatewords:30 }}</p>
          
-          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+          <p>{{ post.blog_body }}</p>
          
           
         </div>
+        {% endfor %}
         <!-- /.blog-post -->
 
       </div>

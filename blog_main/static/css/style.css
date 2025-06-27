@@ -1,4 +1,5 @@
 /* stylelint-disable selector-list-comma-newline-after */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
@@ -67,3 +68,33 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.container-container,#posts-card {
+  color: #727272;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 1000;
+  border-left: #727272 solid 0.1rem;
+  padding-left: 0.5rem;
+}
+
+#posts-card {
+  width: 300px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+}
+
+#navbar {
+  transition: all 0.5s ease-in-out;
+}
+
+#navbar:hover{
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  transform: scale(1.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
