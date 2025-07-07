@@ -1,3 +1,12 @@
+# 📰 Blog News – Django Full-Stack Web Application
+
+[![Django](https://img.shields.io/badge/Django-5.2-blue)](https://www.djangoproject.com/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+> 🇧🇷 Projeto completo de blog de notícias desenvolvido com Django.  
+> 🇺🇸 Full-featured news blog project built with Django.
+
+---
 
 # 📰 Blog News Project
 
