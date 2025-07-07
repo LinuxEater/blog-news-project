@@ -2,17 +2,17 @@
 {% load static %}
   {% block content %}
 
-  <div class="panel jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url({% static 'images/image.jpg' %});background-blend-mode: overlay;background-size:cover;">
-    {% for post in featured_posts %}
-    {% if forloop.first %}
+{% for post in featured_posts %}
+  {% if forloop.first %}
+  <div class="panel jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('{{ post.featured_image.url }}');background-blend-mode: overlay;background-size:cover;">
     <div class="panel-content">
         <h1 class="display-4 font-italic">{{ post.title }}</h1>
         <p class="lead my-3">{{ post.short_description }}</p>
         <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
       </div>
-    </div>
+  </div>
     {% endif %}
-    {% endfor %}
+{% endfor %}
 
     <h1 class="container-container">Featured Posts</h1>
     <div class="row mb-2">
