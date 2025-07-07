@@ -80,7 +80,30 @@ blog-news-project/
 
 ## 📷 Capturas de Tela | Screenshots
 
-> Adicione aqui prints da interface. / Add interface screenshots here.
+### 🏠 Página Inicial do Blog | Blog Homepage
+
+![Blog Home 1](screenshots/blog_home_1.jpg)  
+![Blog Home 2](screenshots/blog_home_2.jpg)  
+![Blog Home 3](screenshots/blog_home_3.jpg)
+
+---
+
+### 📄 Página de Post Individual | Single Blog Post Page
+
+![Single Blog Post](screenshots/blog_single_page_feature.jpg)
+
+---
+
+### 🗂️ Sistema de Categorias | Categories System
+
+![Categories View](screenshots/categories_post.jpg)
+
+---
+
+### 🔐 Painel Administrativo | Django Admin Panel
+
+![Admin Panel 1](screenshots/admin_painel_1.jpg)  
+![Admin Panel 2](screenshots/admin_painel_2.jpg)
 
 ---
 
