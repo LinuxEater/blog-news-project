@@ -8,7 +8,7 @@
     <div class="panel-content">
         <h1 class="display-4 font-italic">{{ post.title }}</h1>
         <p class="lead my-3">{{ post.short_description }}</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        <p class="lead mb-0"><a href="{% url 'blogs' post.slug %}" class="text-white font-weight-bold">Continue reading...</a></p>
       </div>
   </div>
     {% endif %}
@@ -21,7 +21,7 @@
       <div class="col-md-6">
         <div class="card border-0" >
           <div class="card-body">
-            <h3>{{ post.title }}</h3>
+            <a href="{% url 'blogs' post.slug %}" class="text-white font-weight-bold"><h3>{{ post.title }}</h3></a>
             <small class="mb-1 text-muted">{{post.created_at}} ago | {{post.author}}</small>
             <p class="card-text">{{ post.short_description }}</p>
           </div>
@@ -38,7 +38,7 @@
 
           {% for post in posts %}
           <div class="blog-post">
-            <h2 class="blog-post-title">{{ post.title }}</h2>
+            <a href="{% url 'blogs' post.slug %}" class="text-white font-weight-bold"><h2 class="blog-post-title">{{ post.title }}</h2></a>
             <p class="blog-post-meta">{{post.created_at | timesince}} by <a href="#">{{post.author}}</a></p>
 
             <p>{{ post.short_description | truncatewords:30 }}</p>
