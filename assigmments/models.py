@@ -14,3 +14,16 @@ class AboutUs(models.Model):
     
     class Meta:
         verbose_name_plural = "AboutUs"
+
+
+class ContactsFunction(models.Model):
+    name_url = models.CharField(max_length=100)
+    url_link = models.URLField(max_length=200)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name_url
+    
+    class Meta:
+        verbose_name_plural = "Contacts"        

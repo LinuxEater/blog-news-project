@@ -40,16 +40,11 @@
           <div class="blog-post">
             <a href="{% url 'blogs' post.slug %}" class="text-dark font-weight-bold"><h2 class="blog-post-title">{{ post.title }}</h2></a>
             <p class="blog-post-meta">{{post.created_at | timesince}} by <a href="#">{{post.author}}</a></p>
-
             <p>{{ post.short_description | truncatewords:30 }}</p>
-          
             <p>{{ post.blog_body }}</p>
-          
-            
           </div>
           {% endfor %}
           <!-- /.blog-post -->
-
         </div>
         <!-- /.blog-main -->
 
@@ -67,11 +62,8 @@
             </ol>
           </div>
         </aside><!-- /.blog-sidebar -->
-
       </div><!-- /.row -->
-
     </main><!-- /.container -->
-
   </div>
 <script src="{% static 'js/script.js' %}"></script>
 {% endblock content %}
