@@ -1,1 +1,32 @@
-env
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.sqlite3
+db.sqlite3
+
+# Ignore migrations (opcional, mas recomendado para controlar via VCS)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Pytest cache
+.pytest_cache/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Arquivos de logs
+*.log
+
+# Arquivos estáticos coletados
+/staticfiles/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
