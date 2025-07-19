@@ -18,3 +18,4 @@ def home(request):
         'contacts': contacts
         }
     return render(request, 'home.html', context)
+
