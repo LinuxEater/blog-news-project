@@ -25,9 +25,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('category/', include('blogs.urls')),
-    path('<slug:slug>/', BlogView.blogs, name='blogs'),
+    path('blogs/<slug:slug>/', BlogView.blogs, name='blogs'),
     #search endpoint
     path('blogs/search/',BlogView.search, name='search'),
+    #register endpoints
+    path('register/', views.register, name='register'),
+    #Login and Logout endpoints
+    path('login/',views.login, name='login'),
+    path('logout/',views.logout, name='logout'),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
