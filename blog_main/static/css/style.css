@@ -59,14 +59,14 @@ h1, h2, h3, h4, h5, h6 {
  * Footer
  */
 .blog-footer {
-  padding: 2.5rem 0;
-  color: #727272;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+  padding: 2.5rem 0 !important;
+  color: #727272 !important;
+  text-align: center !important;
+  background-color: #f9f9f9 !important;
+  border-top: .05rem solid #e5e5e5 !important;
 }
 .blog-footer p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .container-container,#posts-card {

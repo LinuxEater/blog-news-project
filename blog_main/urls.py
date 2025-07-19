@@ -33,6 +33,8 @@ urlpatterns = [
     #Login and Logout endpoints
     path('login/',views.login, name='login'),
     path('logout/',views.logout, name='logout'),
+    #dashboard
+    path('dashboard/', include('dashboard.urls')),
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
