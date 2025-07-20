@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <div class="row">
     <!-- Left sidebar -->
     <!-- load the sidebar here -->
     {% include 'dashboard/sidebar.html' %}
-
     <!-- Right side content -->
     <div class="col-md-9">
         <span>Logged in as <b>{{ user }}</b></span>
@@ -32,5 +30,4 @@
     </div>
 </div>
 <br>
-
 {% endblock %}
